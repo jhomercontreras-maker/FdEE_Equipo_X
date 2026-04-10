@@ -20,133 +20,82 @@ jobs:
             const fs = require('fs');
             const owner = 'jhomercontreras-maker';
             const repo = 'FdEE_Equipo_X';
-            const projectNumber = 2;
             
             const reportFile = 'project-report.txt';
             const jsonFile = 'project-report.json';
             
             try {
-              // Consulta GraphQL para obtener campos del proyecto
-              const query = `
-                query {
-                  repository(owner: "${owner}", name: "${repo}") {
-                    projectV2(number: ${projectNumber}) {
-                      title
-                      items(first: 100) {
-                        nodes {
-                          id
-                          content {
-                            ... on Issue {
-                              number
-                              title
-                              state
-                            }
-                          }
-                          fieldValues(first: 30) {
-                            nodes {
-                              ... on ProjectV2ItemFieldTextValue {
-                                field {
-                                  name
-                                }
-                                text
-                              }
-                              ... on ProjectV2ItemFieldSingleSelectValue {
-                                field {
-                                  name
-                                }
-                                name
-                              }
-                              ... on ProjectV2ItemFieldDateValue {
-                                field {
-                                  name
-                                }
-                                date
-                              }
-                              ... on ProjectV2ItemFieldNumberValue {
-                                field {
-                                  name
-                                }
-                                number
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              `;
-              
-              const result = await github.graphql(query);
-              const project = result.repository.projectV2;
-              const items = project.items.nodes;
+              // Obtener todas las issues
+              const issues = await github.rest.issues.listForRepo({
+                owner: owner,
+                repo: repo,
+                state: 'all',
+                per_page: 100
+              });
               
               const timestamp = new Date().toISOString();
               const readableTime = new Date().toLocaleString();
               
               console.log('📊 REPORTE DEL PROYECTO');
               console.log('='.repeat(100));
-              console.log(`Proyecto: ${project.title}`);
+              console.log(`Proyecto: Sistema de audio amplificador`);
               console.log(`Fecha del reporte: ${readableTime}`);
-              console.log(`Total de items: ${items.length}`);
+              console.log(`Total de issues: ${issues.data.length}`);
               console.log('='.repeat(100));
               
-              let reportContent = `REPORTE DEL PROYECTO: ${project.title}\n`;
+              let reportContent = `REPORTE DEL PROYECTO: Sistema de audio amplificador\n`;
               reportContent += `Generado: ${readableTime}\n`;
               reportContent += `${'='.repeat(100)}\n\n`;
               
               const reportData = [];
               
-              items.forEach((item, index) => {
-                if (item.content) {
-                  const issueNumber = item.content.number;
-                  const issueTitle = item.content.title;
-                  const issueState = item.content.state;
-                  
-                  // Extraer valores de campos
-                  let fieldValues = {};
-                  item.fieldValues.nodes.forEach(field => {
-                    if (field.field) {
-                      const fieldName = field.field.name;
-                      let fieldValue = field.text || field.name || field.date || field.number || 'Sin asignar';
-                      fieldValues[fieldName] = fieldValue;
-                    }
-                  });
-                  
-                  console.log(`\n${index + 1}. 📌 ${project.title}`);
-                  console.log(`   Issue #${issueNumber}: ${issueTitle}`);
-                  console.log(`   Estado: ${issueState}`);
-                  console.log(`   Status: ${fieldValues['Status'] || 'No asignado'}`);
-                  console.log(`   Priority: ${fieldValues['Priority'] || 'No asignado'}`);
-                  console.log(`   Size: ${fieldValues['Size'] || 'No asignado'}`);
-                  console.log(`   Estimate: ${fieldValues['Estimate'] || 'No asignado'}`);
-                  console.log(`   Start date: ${fieldValues['Start date'] || 'No asignado'}`);
-                  console.log(`   Target date: ${fieldValues['Target date'] || 'No asignado'}`);
-                  
-                  reportContent += `${index + 1}. 📌 ${project.title}\n`;
-                  reportContent += `   Issue #${issueNumber}: ${issueTitle}\n`;
-                  reportContent += `   Estado: ${issueState}\n`;
-                  reportContent += `   Status: ${fieldValues['Status'] || 'No asignado'}\n`;
-                  reportContent += `   Priority: ${fieldValues['Priority'] || 'No asignado'}\n`;
-                  reportContent += `   Size: ${fieldValues['Size'] || 'No asignado'}\n`;
-                  reportContent += `   Estimate: ${fieldValues['Estimate'] || 'No asignado'}\n`;
-                  reportContent += `   Start date: ${fieldValues['Start date'] || 'No asignado'}\n`;
-                  reportContent += `   Target date: ${fieldValues['Target date'] || 'No asignado'}\n\n`;
-                  
-                  reportData.push({
-                    project: project.title,
-                    issue_number: issueNumber,
-                    issue_title: issueTitle,
-                    state: issueState,
-                    status: fieldValues['Status'] || 'No asignado',
-                    priority: fieldValues['Priority'] || 'No asignado',
-                    size: fieldValues['Size'] || 'No asignado',
-                    estimate: fieldValues['Estimate'] || 'No asignado',
-                    start_date: fieldValues['Start date'] || 'No asignado',
-                    target_date: fieldValues['Target date'] || 'No asignado',
-                    recorded_at: timestamp
-                  });
-                }
+              issues.data.forEach((issue, index) => {
+                const issueNumber = issue.number;
+                const issueTitle = issue.title;
+                const issueState = issue.state;
+                const labels = issue.labels.map(l => l.name).join(', ') || 'Sin labels';
+                const milestone = issue.milestone?.title || 'Sin milestone';
+                const createdDate = new Date(issue.created_at).toLocaleDateString('es-ES', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                });
+                const updatedDate = new Date(issue.updated_at).toLocaleDateString('es-ES', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                });
+                
+                console.log(`\n${index + 1}. 📌 Sistema de audio amplificador`);
+                console.log(`   Issue #${issueNumber}: ${issueTitle}`);
+                console.log(`   Estado: ${issueState}`);
+                console.log(`   Labels: ${labels}`);
+                console.log(`   Milestone: ${milestone}`);
+                console.log(`   Start date: ${createdDate}`);
+                console.log(`   Last updated: ${updatedDate}`);
+                console.log(`   URL: ${issue.html_url}`);
+                
+                reportContent += `${index + 1}. 📌 Sistema de audio amplificador\n`;
+                reportContent += `   Issue #${issueNumber}: ${issueTitle}\n`;
+                reportContent += `   Estado: ${issueState}\n`;
+                reportContent += `   Labels: ${labels}\n`;
+                reportContent += `   Milestone: ${milestone}\n`;
+                reportContent += `   Start date: ${createdDate}\n`;
+                reportContent += `   Last updated: ${updatedDate}\n`;
+                reportContent += `   URL: ${issue.html_url}\n\n`;
+                
+                reportData.push({
+                  project: 'Sistema de audio amplificador',
+                  issue_number: issueNumber,
+                  issue_title: issueTitle,
+                  state: issueState,
+                  labels: labels,
+                  milestone: milestone,
+                  start_date: createdDate,
+                  last_updated: updatedDate,
+                  url: issue.html_url,
+                  recorded_at: timestamp
+                });
               });
               
               console.log('='.repeat(100));
@@ -156,7 +105,7 @@ jobs:
               fs.writeFileSync(reportFile, reportContent);
               console.log(`📝 Guardado en: ${reportFile}`);
               
-              // Guardar en JSON
+              // Guardar en JSON con historial
               let allReports = [];
               if (fs.existsSync(jsonFile)) {
                 try {
@@ -169,8 +118,8 @@ jobs:
               allReports.push({
                 timestamp: timestamp,
                 readable_time: readableTime,
-                project: project.title,
-                total_items: items.length,
+                project: 'Sistema de audio amplificador',
+                total_items: issues.data.length,
                 items: reportData
               });
               
@@ -180,6 +129,7 @@ jobs:
               
             } catch (error) {
               console.error('❌ Error:', error.message);
-              console.error('Detalle:', error);
               throw error;
             }
+```*
+
