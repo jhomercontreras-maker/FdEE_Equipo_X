@@ -21,69 +21,58 @@ jobs:
             const repo = 'FdEE_Equipo_X';
             const projectNumber = 2;
             
-            const query = `
-              query {
-                repository(owner: "${owner}", name: "${repo}") {
-                  projectV2(number: ${projectNumber}) {
-                    title
-                    items(first: 100) {
-                      nodes {
-                        id
-                        content {
-                          ... on Issue {
-                            number
-                            title
-                            url
-                            updatedAt
-                          }
-                        }
-                      }
-                    }
-                    fields(first: 20) {
-                      nodes {
-                        ... on ProjectV2Field {
-                          id
-                          name
-                        }
-                        ... on ProjectV2SingleSelectField {
-                          id
-                          name
-                        }
-                        ... on ProjectV2IterationField {
-                          id
-                          name
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            `;
-            
             try {
-              const result = await github.graphql(query);
-              const project = result.repository.projectV2;
-              const items = project.items.nodes;
+              // Primero, obtener la lista de issues del repositorio
+              const issues = await github.rest.issues.listForRepo({
+                owner: owner,
+                repo: repo,
+                state: 'all',
+                per_page: 100
+              });
               
-              console.log('📊 REPORTE DE PROYECTO');
+              console.log('📊 REPORTE DE ISSUES');
               console.log('='.repeat(60));
-              console.log(`Proyecto: ${project.title}`);
-              console.log(`Total de items: ${items.length}`);
+              console.log(`Repositorio: ${owner}/${repo}`);
+              console.log(`Total de issues: ${issues.data.length}`);
               console.log(`Fecha de consulta: ${new Date().toISOString()}`);
               console.log('='.repeat(60));
               
-              items.forEach((item, index) => {
-                if (item.content) {
-                  console.log(`\n${index + 1}. 📌 #${item.content.number}: ${item.content.title}`);
-                  console.log(`   🔗 ${item.content.url}`);
-                  console.log(`   ⏰ Actualizado: ${new Date(item.content.updatedAt).toLocaleString()}`);
+              issues.data.forEach((issue, index) => {
+                console.log(`\n${index + 1}. 📌 #${issue.number}: ${issue.title}`);
+                console.log(`   Estado: ${issue.state}`);
+                console.log(`   Asignado a: ${issue.assignee?.login || 'Sin asignar'}`);
+                console.log(`   Creado: ${new Date(issue.created_at).toLocaleString()}`);
+                console.log(`   Actualizado: ${new Date(issue.updated_at).toLocaleString()}`);
+                if (issue.milestone) {
+                  console.log(`   Milestone: ${issue.milestone.title}`);
                 }
               });
               
               console.log('\n' + '='.repeat(60));
               console.log('✅ Monitoreo completado exitosamente');
               
+              // Guardar en un archivo JSON
+              const fs = require('fs');
+              const report = {
+                timestamp: new Date().toISOString(),
+                repository: `${owner}/${repo}`,
+                totalIssues: issues.data.length,
+                issues: issues.data.map(issue => ({
+                  number: issue.number,
+                  title: issue.title,
+                  state: issue.state,
+                  created_at: issue.created_at,
+                  updated_at: issue.updated_at,
+                  assignee: issue.assignee?.login,
+                  milestone: issue.milestone?.title,
+                  url: issue.html_url
+                }))
+              };
+              
+              console.log('\n📝 Guardando reporte...');
+              console.log(JSON.stringify(report, null, 2));
+              
             } catch (error) {
-              console.error('❌ Error en la consulta:', error.message);
+              console.error('❌ Error:', error.message);
               throw error;
             }
