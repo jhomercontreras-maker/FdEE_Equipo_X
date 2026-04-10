@@ -3,7 +3,7 @@ name: Monitor Project Date Changes
 on:
   schedule:
     - cron: '0 * * * *'  # Cada hora
-  workflow_dispatch:  # Permite ejecutar manualmente
+  workflow_dispatch:
 
 jobs:
   monitor-dates:
@@ -17,17 +17,15 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fs = require('fs');
-            
-            // Obtener información del proyecto
-            const projectNumber = 2;
             const owner = 'jhomercontreras-maker';
             const repo = 'FdEE_Equipo_X';
+            const projectNumber = 2;
             
             const query = `
               query {
                 repository(owner: "${owner}", name: "${repo}") {
                   projectV2(number: ${projectNumber}) {
+                    title
                     items(first: 100) {
                       nodes {
                         id
@@ -35,19 +33,25 @@ jobs:
                           ... on Issue {
                             number
                             title
-                            updatedAt
                             url
+                            updatedAt
                           }
                         }
-                        fieldValues(first: 20) {
-                          nodes {
-                            ... on ProjectV2ItemFieldDateValue {
-                              field {
-                                name
-                              }
-                              date
-                            }
-                          }
+                      }
+                    }
+                    fields(first: 20) {
+                      nodes {
+                        ... on ProjectV2Field {
+                          id
+                          name
+                        }
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          name
+                        }
+                        ... on ProjectV2IterationField {
+                          id
+                          name
                         }
                       }
                     }
@@ -58,42 +62,28 @@ jobs:
             
             try {
               const result = await github.graphql(query);
-              const items = result.repository.projectV2.items.nodes;
+              const project = result.repository.projectV2;
+              const items = project.items.nodes;
               
-              console.log('📊 Reporte de Fechas del Proyecto:');
-              console.log('='.repeat(50));
+              console.log('📊 REPORTE DE PROYECTO');
+              console.log('='.repeat(60));
+              console.log(`Proyecto: ${project.title}`);
+              console.log(`Total de items: ${items.length}`);
+              console.log(`Fecha de consulta: ${new Date().toISOString()}`);
+              console.log('='.repeat(60));
               
-              items.forEach(item => {
+              items.forEach((item, index) => {
                 if (item.content) {
-                  console.log(`\n📌 Issue #${item.content.number}: ${item.content.title}`);
-                  console.log(`   URL: ${item.content.url}`);
-                  console.log(`   Última actualización: ${item.content.updatedAt}`);
-                  
-                  item.fieldValues.nodes.forEach(field => {
-                    if (field.field && field.date) {
-                      console.log(`   📅 ${field.field.name}: ${field.date}`);
-                    }
-                  });
+                  console.log(`\n${index + 1}. 📌 #${item.content.number}: ${item.content.title}`);
+                  console.log(`   🔗 ${item.content.url}`);
+                  console.log(`   ⏰ Actualizado: ${new Date(item.content.updatedAt).toLocaleString()}`);
                 }
               });
               
-              // Guardar resultados en archivo
-              const report = {
-                timestamp: new Date().toISOString(),
-                items: items.map(item => ({
-                  number: item.content?.number,
-                  title: item.content?.title,
-                  url: item.content?.url,
-                  dates: item.fieldValues.nodes
-                    .filter(f => f.field && f.date)
-                    .map(f => ({ field: f.field.name, date: f.date }))
-                }))
-              };
-              
-              console.log('\n✅ Reporte completado');
-              console.log(JSON.stringify(report, null, 2));
+              console.log('\n' + '='.repeat(60));
+              console.log('✅ Monitoreo completado exitosamente');
               
             } catch (error) {
-              console.error('❌ Error:', error);
+              console.error('❌ Error en la consulta:', error.message);
               throw error;
             }
