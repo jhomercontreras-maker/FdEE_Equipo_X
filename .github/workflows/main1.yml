@@ -1,4 +1,4 @@
-name: Monitor Project Start Dates
+name: Monitor Project Dates Report
 
 on:
   schedule:
@@ -6,13 +6,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  monitor-start-dates:
+  generate-report:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Extract and Log Start Dates
+      - name: Generate Project Report
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -20,95 +20,166 @@ jobs:
             const fs = require('fs');
             const owner = 'jhomercontreras-maker';
             const repo = 'FdEE_Equipo_X';
+            const projectNumber = 2;
             
-            // Archivo de registro
-            const logFile = 'start-dates-log.txt';
-            const jsonFile = 'start-dates-history.json';
+            const reportFile = 'project-report.txt';
+            const jsonFile = 'project-report.json';
             
             try {
-              // Obtener todas las issues
-              const issues = await github.rest.issues.listForRepo({
-                owner: owner,
-                repo: repo,
-                state: 'all',
-                per_page: 100
-              });
+              // Consulta GraphQL para obtener campos del proyecto
+              const query = `
+                query {
+                  repository(owner: "${owner}", name: "${repo}") {
+                    projectV2(number: ${projectNumber}) {
+                      title
+                      items(first: 100) {
+                        nodes {
+                          id
+                          content {
+                            ... on Issue {
+                              number
+                              title
+                              state
+                            }
+                          }
+                          fieldValues(first: 30) {
+                            nodes {
+                              ... on ProjectV2ItemFieldTextValue {
+                                field {
+                                  name
+                                }
+                                text
+                              }
+                              ... on ProjectV2ItemFieldSingleSelectValue {
+                                field {
+                                  name
+                                }
+                                name
+                              }
+                              ... on ProjectV2ItemFieldDateValue {
+                                field {
+                                  name
+                                }
+                                date
+                              }
+                              ... on ProjectV2ItemFieldNumberValue {
+                                field {
+                                  name
+                                }
+                                number
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              `;
+              
+              const result = await github.graphql(query);
+              const project = result.repository.projectV2;
+              const items = project.items.nodes;
               
               const timestamp = new Date().toISOString();
               const readableTime = new Date().toLocaleString();
               
-              console.log('📊 REPORTE DE FECHAS DE START');
-              console.log('='.repeat(80));
-              console.log(`Fecha y hora del reporte: ${readableTime}`);
-              console.log(`Timestamp: ${timestamp}`);
-              console.log(`Repositorio: ${owner}/${repo}`);
-              console.log('='.repeat(80));
+              console.log('📊 REPORTE DEL PROYECTO');
+              console.log('='.repeat(100));
+              console.log(`Proyecto: ${project.title}`);
+              console.log(`Fecha del reporte: ${readableTime}`);
+              console.log(`Total de items: ${items.length}`);
+              console.log('='.repeat(100));
               
-              // Procesar cada issue
-              const startDatesData = [];
-              let logContent = `\n${'='.repeat(80)}\n`;
-              logContent += `REPORTE DE FECHAS DE START - ${readableTime}\n`;
-              logContent += `${'='.repeat(80)}\n\n`;
+              let reportContent = `REPORTE DEL PROYECTO: ${project.title}\n`;
+              reportContent += `Generado: ${readableTime}\n`;
+              reportContent += `${'='.repeat(100)}\n\n`;
               
-              issues.data.forEach((issue, index) => {
-                const startDate = issue.created_at; // O puedes usar updated_at
-                
-                console.log(`\n${index + 1}. 📌 Issue #${issue.number}: ${issue.title}`);
-                console.log(`   Fecha de creación (START): ${new Date(startDate).toLocaleString()}`);
-                console.log(`   Última actualización: ${new Date(issue.updated_at).toLocaleString()}`);
-                console.log(`   Estado: ${issue.state}`);
-                console.log(`   URL: ${issue.html_url}`);
-                
-                logContent += `${index + 1}. Issue #${issue.number}: ${issue.title}\n`;
-                logContent += `   START DATE: ${new Date(startDate).toLocaleString()}\n`;
-                logContent += `   Updated: ${new Date(issue.updated_at).toLocaleString()}\n`;
-                logContent += `   State: ${issue.state}\n`;
-                logContent += `   URL: ${issue.html_url}\n\n`;
-                
-                startDatesData.push({
-                  number: issue.number,
-                  title: issue.title,
-                  start_date: startDate,
-                  updated_date: issue.updated_at,
-                  state: issue.state,
-                  url: issue.html_url,
-                  recorded_at: timestamp
-                });
+              const reportData = [];
+              
+              items.forEach((item, index) => {
+                if (item.content) {
+                  const issueNumber = item.content.number;
+                  const issueTitle = item.content.title;
+                  const issueState = item.content.state;
+                  
+                  // Extraer valores de campos
+                  let fieldValues = {};
+                  item.fieldValues.nodes.forEach(field => {
+                    if (field.field) {
+                      const fieldName = field.field.name;
+                      let fieldValue = field.text || field.name || field.date || field.number || 'Sin asignar';
+                      fieldValues[fieldName] = fieldValue;
+                    }
+                  });
+                  
+                  console.log(`\n${index + 1}. 📌 ${project.title}`);
+                  console.log(`   Issue #${issueNumber}: ${issueTitle}`);
+                  console.log(`   Estado: ${issueState}`);
+                  console.log(`   Status: ${fieldValues['Status'] || 'No asignado'}`);
+                  console.log(`   Priority: ${fieldValues['Priority'] || 'No asignado'}`);
+                  console.log(`   Size: ${fieldValues['Size'] || 'No asignado'}`);
+                  console.log(`   Estimate: ${fieldValues['Estimate'] || 'No asignado'}`);
+                  console.log(`   Start date: ${fieldValues['Start date'] || 'No asignado'}`);
+                  console.log(`   Target date: ${fieldValues['Target date'] || 'No asignado'}`);
+                  
+                  reportContent += `${index + 1}. 📌 ${project.title}\n`;
+                  reportContent += `   Issue #${issueNumber}: ${issueTitle}\n`;
+                  reportContent += `   Estado: ${issueState}\n`;
+                  reportContent += `   Status: ${fieldValues['Status'] || 'No asignado'}\n`;
+                  reportContent += `   Priority: ${fieldValues['Priority'] || 'No asignado'}\n`;
+                  reportContent += `   Size: ${fieldValues['Size'] || 'No asignado'}\n`;
+                  reportContent += `   Estimate: ${fieldValues['Estimate'] || 'No asignado'}\n`;
+                  reportContent += `   Start date: ${fieldValues['Start date'] || 'No asignado'}\n`;
+                  reportContent += `   Target date: ${fieldValues['Target date'] || 'No asignado'}\n\n`;
+                  
+                  reportData.push({
+                    project: project.title,
+                    issue_number: issueNumber,
+                    issue_title: issueTitle,
+                    state: issueState,
+                    status: fieldValues['Status'] || 'No asignado',
+                    priority: fieldValues['Priority'] || 'No asignado',
+                    size: fieldValues['Size'] || 'No asignado',
+                    estimate: fieldValues['Estimate'] || 'No asignado',
+                    start_date: fieldValues['Start date'] || 'No asignado',
+                    target_date: fieldValues['Target date'] || 'No asignado',
+                    recorded_at: timestamp
+                  });
+                }
               });
               
-              console.log('\n' + '='.repeat(80));
-              console.log('✅ Reporte completado');
+              console.log('='.repeat(100));
+              console.log('✅ Reporte generado exitosamente');
               
-              // Guardar en archivo de texto (.txt)
-              if (fs.existsSync(logFile)) {
-                fs.appendFileSync(logFile, logContent);
-              } else {
-                fs.writeFileSync(logFile, logContent);
-              }
-              console.log(`📝 Guardado en: ${logFile}`);
+              // Guardar en archivo de texto
+              fs.writeFileSync(reportFile, reportContent);
+              console.log(`📝 Guardado en: ${reportFile}`);
               
-              // Guardar en JSON para análisis
-              let allHistory = [];
+              // Guardar en JSON
+              let allReports = [];
               if (fs.existsSync(jsonFile)) {
                 try {
-                  allHistory = JSON.parse(fs.readFileSync(jsonFile, 'utf8'));
+                  allReports = JSON.parse(fs.readFileSync(jsonFile, 'utf8'));
                 } catch (e) {
-                  allHistory = [];
+                  allReports = [];
                 }
               }
               
-              allHistory.push({
+              allReports.push({
                 timestamp: timestamp,
                 readable_time: readableTime,
-                total_issues: issues.data.length,
-                issues: startDatesData
+                project: project.title,
+                total_items: items.length,
+                items: reportData
               });
               
-              fs.writeFileSync(jsonFile, JSON.stringify(allHistory, null, 2));
+              fs.writeFileSync(jsonFile, JSON.stringify(allReports, null, 2));
               console.log(`📊 Historial guardado en: ${jsonFile}`);
-              console.log(`📌 Total de registros: ${allHistory.length}`);
+              console.log(`📌 Total de reportes guardados: ${allReports.length}`);
               
             } catch (error) {
               console.error('❌ Error:', error.message);
+              console.error('Detalle:', error);
               throw error;
             }
