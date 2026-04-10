@@ -1,4 +1,4 @@
-name: Monitor Project Date Changes
+name: Monitor Project Start Dates
 
 on:
   schedule:
@@ -6,13 +6,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  monitor-dates:
+  monitor-start-dates:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Monitor Project Dates
+      - name: Extract and Log Start Dates
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -21,11 +21,12 @@ jobs:
             const owner = 'jhomercontreras-maker';
             const repo = 'FdEE_Equipo_X';
             
-            // Archivo donde guardamos el historial
-            const historyFile = 'project-dates-history.json';
+            // Archivo de registro
+            const logFile = 'start-dates-log.txt';
+            const jsonFile = 'start-dates-history.json';
             
             try {
-              // Obtener issues actuales
+              // Obtener todas las issues
               const issues = await github.rest.issues.listForRepo({
                 owner: owner,
                 repo: repo,
@@ -33,80 +34,79 @@ jobs:
                 per_page: 100
               });
               
-              // Cargar historial anterior
-              let previousData = {};
-              try {
-                previousData = JSON.parse(fs.readFileSync(historyFile, 'utf8'));
-              } catch (e) {
-                console.log('📝 Primera ejecución - creando historial inicial');
-              }
+              const timestamp = new Date().toISOString();
+              const readableTime = new Date().toLocaleString();
               
-              console.log('📊 MONITOREO DE CAMBIOS DE FECHAS');
-              console.log('='.repeat(70));
-              console.log(`Fecha de consulta: ${new Date().toISOString()}`);
-              console.log('='.repeat(70));
+              console.log('📊 REPORTE DE FECHAS DE START');
+              console.log('='.repeat(80));
+              console.log(`Fecha y hora del reporte: ${readableTime}`);
+              console.log(`Timestamp: ${timestamp}`);
+              console.log(`Repositorio: ${owner}/${repo}`);
+              console.log('='.repeat(80));
               
-              let hasChanges = false;
-              const currentData = {};
-              const changes = [];
-              
-              issues.data.forEach((issue) => {
-                const issueKey = `issue-${issue.number}`;
-                const currentDate = issue.updated_at;
-                
-                currentData[issueKey] = {
-                  number: issue.number,
-                  title: issue.title,
-                  updated_at: currentDate,
-                  created_at: issue.created_at,
-                  state: issue.state,
-                  url: issue.html_url
-                };
-                
-                // Verificar si hubo cambio
-                if (previousData[issueKey]) {
-                  if (previousData[issueKey].updated_at !== currentDate) {
-                    hasChanges = true;
-                    changes.push({
-                      number: issue.number,
-                      title: issue.title,
-                      previousUpdate: previousData[issueKey].updated_at,
-                      currentUpdate: currentDate,
-                      url: issue.html_url
-                    });
-                  }
-                }
-              });
-              
-              // Mostrar cambios detectados
-              if (hasChanges) {
-                console.log('\n✅ SE DETECTARON CAMBIOS:\n');
-                changes.forEach((change, index) => {
-                  console.log(`${index + 1}. 📌 Issue #${change.number}: ${change.title}`);
-                  console.log(`   Anterior: ${new Date(change.previousUpdate).toLocaleString()}`);
-                  console.log(`   Actual:   ${new Date(change.currentUpdate).toLocaleString()}`);
-                  console.log(`   🔗 ${change.url}\n`);
-                });
-              } else {
-                console.log('\nℹ️  No se detectaron cambios en las fechas\n');
-              }
-              
-              // Mostrar todas las fechas (sin importar si cambiaron)
-              console.log('='.repeat(70));
-              console.log('📅 TODAS LAS FECHAS DE ACTUALIZACION:\n');
+              // Procesar cada issue
+              const startDatesData = [];
+              let logContent = `\n${'='.repeat(80)}\n`;
+              logContent += `REPORTE DE FECHAS DE START - ${readableTime}\n`;
+              logContent += `${'='.repeat(80)}\n\n`;
               
               issues.data.forEach((issue, index) => {
-                console.log(`${index + 1}. #${issue.number}: ${issue.title}`);
-                console.log(`   Creada:    ${new Date(issue.created_at).toLocaleString()}`);
-                console.log(`   Actualizada: ${new Date(issue.updated_at).toLocaleString()}`);
-                console.log(`   Estado:    ${issue.state}`);
-                console.log('');
+                const startDate = issue.created_at; // O puedes usar updated_at
+                
+                console.log(`\n${index + 1}. 📌 Issue #${issue.number}: ${issue.title}`);
+                console.log(`   Fecha de creación (START): ${new Date(startDate).toLocaleString()}`);
+                console.log(`   Última actualización: ${new Date(issue.updated_at).toLocaleString()}`);
+                console.log(`   Estado: ${issue.state}`);
+                console.log(`   URL: ${issue.html_url}`);
+                
+                logContent += `${index + 1}. Issue #${issue.number}: ${issue.title}\n`;
+                logContent += `   START DATE: ${new Date(startDate).toLocaleString()}\n`;
+                logContent += `   Updated: ${new Date(issue.updated_at).toLocaleString()}\n`;
+                logContent += `   State: ${issue.state}\n`;
+                logContent += `   URL: ${issue.html_url}\n\n`;
+                
+                startDatesData.push({
+                  number: issue.number,
+                  title: issue.title,
+                  start_date: startDate,
+                  updated_date: issue.updated_at,
+                  state: issue.state,
+                  url: issue.html_url,
+                  recorded_at: timestamp
+                });
               });
               
-              // Guardar datos actuales para próxima comparación
-              fs.writeFileSync(historyFile, JSON.stringify(currentData, null, 2));
-              console.log('='.repeat(70));
-              console.log('✅ Historial actualizado');
+              console.log('\n' + '='.repeat(80));
+              console.log('✅ Reporte completado');
+              
+              // Guardar en archivo de texto (.txt)
+              if (fs.existsSync(logFile)) {
+                fs.appendFileSync(logFile, logContent);
+              } else {
+                fs.writeFileSync(logFile, logContent);
+              }
+              console.log(`📝 Guardado en: ${logFile}`);
+              
+              // Guardar en JSON para análisis
+              let allHistory = [];
+              if (fs.existsSync(jsonFile)) {
+                try {
+                  allHistory = JSON.parse(fs.readFileSync(jsonFile, 'utf8'));
+                } catch (e) {
+                  allHistory = [];
+                }
+              }
+              
+              allHistory.push({
+                timestamp: timestamp,
+                readable_time: readableTime,
+                total_issues: issues.data.length,
+                issues: startDatesData
+              });
+              
+              fs.writeFileSync(jsonFile, JSON.stringify(allHistory, null, 2));
+              console.log(`📊 Historial guardado en: ${jsonFile}`);
+              console.log(`📌 Total de registros: ${allHistory.length}`);
               
             } catch (error) {
               console.error('❌ Error:', error.message);
