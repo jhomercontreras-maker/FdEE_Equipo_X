@@ -1,5 +1,6 @@
 name: Track Project Changes
-
+permissions:
+  contents: write
 on:
   schedule:
     - cron: '0 * * * *'  # Cada hora
