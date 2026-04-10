@@ -2,353 +2,331 @@
 ║           HISTORIAL COMPLETO DEL PROYECTO                         ║
 ╚════════════════════════════════════════════════════════════════════╝
 
-📅 Fecha del reporte: 10/4/2026, 15:46:53
+📅 Fecha: 10/4/2026, 16:21:05
 🏢 Proyecto: Sistema de audio amplificador
-📊 Total de cambios: 50
-📌 Total de issues: 11
+📊 Items: 11
+🔄 Cambios: 50
 
 ══════════════════════════════════════════════════════════════════════
-📋 ESTADO ACTUAL DE LOS ISSUES
+📋 ESTADO ACTUAL DEL PROJECT
 ══════════════════════════════════════════════════════════════════════
 
-1. 📌 ISSUE #11
-   ├─ Título: subtarea
-   ├─ Estado: OPEN
-   ├─ Creada: 9/4/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: jhomercontreras-maker
-   └─ Milestone: Sin milestone
+1. 📌 ISSUE #1
+   ├─ Título: Formación de grupo y entendimiento del proyecto
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: Backlog
+   └─ ⏰ Start date: 2026-04-08
 
-2. 📌 ISSUE #10
-   ├─ Título: Diseño esquemático preamplificador y distorsionador
-   ├─ Estado: OPEN
-   ├─ Creada: 9/4/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: Sin asignar
-   └─ Milestone: Sin milestone
+2. 📌 ISSUE #3
+   ├─ Título: Lista de exigencias, estado del arte y diagrama de Gantt
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: Backlog
+   └─ ⏰ Start date: 2026-04-15
 
-3. 📌 ISSUE #9
-   ├─ Título: Selección de circuito amplificador Clase D
-   ├─ Estado: OPEN
-   ├─ Creada: 9/4/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: Sin asignar
-   └─ Milestone: Sin milestone
+3. 📌 ISSUE #2
+   ├─ Título: Definición de roles y arquitectura del sistema
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: In progress
+   └─ ⏰ Start date: 2026-04-13
 
-4. 📌 ISSUE #8
-   ├─ Título: Selección de circuito preamplificador
-   ├─ Estado: OPEN
-   ├─ Creada: 9/4/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: Sin asignar
-   └─ Milestone: Sin milestone
+4. 📌 ISSUE #4
+   ├─ Título: Establecer referencias
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: In progress
+   └─ ⏰ Start date: 2026-04-05
 
 5. 📌 ISSUE #7
    ├─ Título: Selección de bocina
-   ├─ Estado: OPEN
-   ├─ Creada: 9/4/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: Sin asignar
-   └─ Milestone: Sin milestone
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: In progress
+   └─ ⏰ Start date: Sin fecha
 
-6. 📌 ISSUE #6
-   ├─ Título: Selección de componentes
-   ├─ Estado: OPEN
-   ├─ Creada: 9/4/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: Sin asignar
-   └─ Milestone: Sin milestone
-
-7. 📌 ISSUE #5
+6. 📌 ISSUE #5
    ├─ Título: citar
-   ├─ Estado: CLOSED
-   ├─ Creada: 9/4/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: Sin asignar
-   └─ Milestone: Entrega Parcial
+   ├─ Estado GitHub: CLOSED
+   ├─ 📌 Status: Done
+   └─ ⏰ Start date: 2026-04-06
 
-8. 📌 ISSUE #4
-   ├─ Título: Establecer referencias
-   ├─ Estado: OPEN
-   ├─ Creada: 9/4/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: Sin asignar
-   └─ Milestone: Entrega Parcial
+7. 📌 ISSUE #6
+   ├─ Título: Selección de componentes
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: Backlog
+   └─ ⏰ Start date: Sin fecha
 
-9. 📌 ISSUE #3
-   ├─ Título: Lista de exigencias, estado del arte y diagrama de Gantt
-   ├─ Estado: OPEN
-   ├─ Creada: 31/3/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: jhomercontreras-maker
-   └─ Milestone: Entrega Parcial
+8. 📌 ISSUE #8
+   ├─ Título: Selección de circuito preamplificador
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: Backlog
+   └─ ⏰ Start date: Sin fecha
 
-10. 📌 ISSUE #2
-   ├─ Título: Definición de roles y arquitectura del sistema
-   ├─ Estado: OPEN
-   ├─ Creada: 31/3/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: jhomercontreras-maker
-   └─ Milestone: Entrega Parcial
+9. 📌 ISSUE #9
+   ├─ Título: Selección de circuito amplificador Clase D
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: Backlog
+   └─ ⏰ Start date: Sin fecha
 
-11. 📌 ISSUE #1
-   ├─ Título: Formación de grupo y entendimiento del proyecto
-   ├─ Estado: OPEN
-   ├─ Creada: 31/3/2026
-   ├─ Actualizada: 9/4/2026
-   ├─ Asignado a: jhomercontreras-maker
-   └─ Milestone: Entrega Parcial
+10. 📌 ISSUE #10
+   ├─ Título: Diseño esquemático preamplificador y distorsionador
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: Backlog
+   └─ ⏰ Start date: Sin fecha
+
+11. 📌 ISSUE #11
+   ├─ Título: subtarea
+   ├─ Estado GitHub: OPEN
+   ├─ 📌 Status: Backlog
+   └─ ⏰ Start date: Sin fecha
 
 ══════════════════════════════════════════════════════════════════════
 🔄 HISTORIAL DE CAMBIOS
 ══════════════════════════════════════════════════════════════════════
 
-1. 📌 Issue #11: subtarea
+1. 📌 Issue #11
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 21:15:19
 
-2. 📌 Issue #4: Establecer referencias
+2. 📌 Issue #4
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 21:15:19
 
-3. 📌 Issue #11: subtarea
+3. 📌 Issue #11
    ├─ Evento: assigned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 21:15:17
 
-4. 📌 Issue #9: Selección de circuito amplificador Clase D
+4. 📌 Issue #9
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:40:30
 
-5. 📌 Issue #6: Selección de componentes
+5. 📌 Issue #6
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:40:30
 
-6. 📌 Issue #8: Selección de circuito preamplificador
+6. 📌 Issue #8
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:42
 
-7. 📌 Issue #6: Selección de componentes
+7. 📌 Issue #6
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:42
 
-8. 📌 Issue #8: Selección de circuito preamplificador
+8. 📌 Issue #8
    ├─ Evento: parent_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:41
 
-9. 📌 Issue #7: Selección de bocina
+9. 📌 Issue #7
    ├─ Evento: sub_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:41
 
-10. 📌 Issue #8: Selección de circuito preamplificador
+10. 📌 Issue #8
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:13
 
-11. 📌 Issue #7: Selección de bocina
+11. 📌 Issue #7
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:13
 
-12. 📌 Issue #7: Selección de bocina
+12. 📌 Issue #7
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:38:51
 
-13. 📌 Issue #6: Selección de componentes
+13. 📌 Issue #6
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:38:51
 
-14. 📌 Issue #6: Selección de componentes
+14. 📌 Issue #6
    ├─ Evento: renamed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:38:33
 
-15. 📌 Issue #2: Definición de roles y arquitectura del sistema
+15. 📌 Issue #2
    ├─ Evento: renamed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:37:40
 
-16. 📌 Issue #3: Lista de exigencias, estado del arte y diagrama de Gantt
+16. 📌 Issue #3
    ├─ Evento: renamed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:37:19
 
-17. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+17. 📌 Issue #1
    ├─ Evento: renamed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:36:53
 
-18. 📌 Issue #3: Lista de exigencias, estado del arte y diagrama de Gantt
+18. 📌 Issue #3
    ├─ Evento: blocked_by_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:31:33
 
-19. 📌 Issue #2: Definición de roles y arquitectura del sistema
+19. 📌 Issue #2
    ├─ Evento: blocking_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:31:33
 
-20. 📌 Issue #2: Definición de roles y arquitectura del sistema
+20. 📌 Issue #2
    ├─ Evento: parent_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:31:24
 
-21. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+21. 📌 Issue #1
    ├─ Evento: sub_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:31:24
 
-22. 📌 Issue #3: Lista de exigencias, estado del arte y diagrama de Gantt
+22. 📌 Issue #3
    ├─ Evento: reopened
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:30:55
 
-23. 📌 Issue #2: Definición de roles y arquitectura del sistema
+23. 📌 Issue #2
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:30:27
 
-24. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+24. 📌 Issue #1
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:30:27
 
-25. 📌 Issue #3: Lista de exigencias, estado del arte y diagrama de Gantt
+25. 📌 Issue #3
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:30:04
 
-26. 📌 Issue #3: Lista de exigencias, estado del arte y diagrama de Gantt
+26. 📌 Issue #3
    ├─ Evento: parent_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:38
 
-27. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+27. 📌 Issue #1
    ├─ Evento: sub_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:38
 
-28. 📌 Issue #3: Lista de exigencias, estado del arte y diagrama de Gantt
+28. 📌 Issue #3
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:35
 
-29. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+29. 📌 Issue #1
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:35
 
-30. 📌 Issue #3: Lista de exigencias, estado del arte y diagrama de Gantt
+30. 📌 Issue #3
    ├─ Evento: blocked_by_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:18
 
-31. 📌 Issue #2: Definición de roles y arquitectura del sistema
+31. 📌 Issue #2
    ├─ Evento: blocking_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:18
 
-32. 📌 Issue #5: citar
+32. 📌 Issue #5
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:17:50
 
-33. 📌 Issue #4: Establecer referencias
+33. 📌 Issue #4
    ├─ Evento: reopened
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:17:26
 
-34. 📌 Issue #4: Establecer referencias
+34. 📌 Issue #4
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:17:24
 
-35. 📌 Issue #2: Definición de roles y arquitectura del sistema
+35. 📌 Issue #2
    ├─ Evento: reopened
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:10:37
 
-36. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+36. 📌 Issue #1
    ├─ Evento: reopened
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:09:08
 
-37. 📌 Issue #5: citar
+37. 📌 Issue #5
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:09:04
 
-38. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+38. 📌 Issue #1
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:09:04
 
-39. 📌 Issue #5: citar
+39. 📌 Issue #5
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:09:02
 
-40. 📌 Issue #4: Establecer referencias
+40. 📌 Issue #4
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:08:48
 
-41. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+41. 📌 Issue #1
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:08:48
 
-42. 📌 Issue #4: Establecer referencias
+42. 📌 Issue #4
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:08:47
 
-43. 📌 Issue #2: Definición de roles y arquitectura del sistema
+43. 📌 Issue #2
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:28:19
 
-44. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+44. 📌 Issue #1
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:28:11
 
-45. 📌 Issue #3: Lista de exigencias, estado del arte y diagrama de Gantt
+45. 📌 Issue #3
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:18:29
 
-46. 📌 Issue #3: Lista de exigencias, estado del arte y diagrama de Gantt
+46. 📌 Issue #3
    ├─ Evento: assigned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:18:29
 
-47. 📌 Issue #2: Definición de roles y arquitectura del sistema
+47. 📌 Issue #2
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:18:12
 
-48. 📌 Issue #2: Definición de roles y arquitectura del sistema
+48. 📌 Issue #2
    ├─ Evento: assigned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:18:12
 
-49. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+49. 📌 Issue #1
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:17:54
 
-50. 📌 Issue #1: Formación de grupo y entendimiento del proyecto
+50. 📌 Issue #1
    ├─ Evento: assigned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:17:54
