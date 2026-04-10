@@ -25,12 +25,12 @@ jobs:
             const projectNumber = parseInt(process.env.PROJECT_NUMBER);
             
             try {
-              console.log(`🔍 Buscando Project #${projectNumber}...\n`);
+              console.log(`🔍 Buscando Project #${projectNumber} (USER)...\n`);
               
-              // Obtener información del proyecto con GraphQL
+              // ✅ CORREGIDO: usar USER en lugar de REPOSITORY
               const projectQuery = `
                 query {
-                  repository(owner: "${owner}", name: "${repo}") {
+                  user(login: "${owner}") {
                     projectV2(number: ${projectNumber}) {
                       id
                       title
@@ -52,12 +52,16 @@ jobs:
               `;
               
               const projectData = await github.graphql(projectQuery);
-              const project = projectData.repository.projectV2;
+              const project = projectData.user.projectV2;
+              
+              if (!project) {
+                throw new Error(`No se encontró el Project #${projectNumber} en el usuario`);
+              }
               
               console.log(`✅ Proyecto encontrado: ${project.title}`);
               console.log(`📊 Total de items: ${project.items.nodes.length}\n`);
               
-              // Obtener todas las issues para el historial de cambios
+              // Obtener todas las issues del repo
               const issues = await github.rest.issues.listForRepo({
                 owner: owner,
                 repo: repo,
@@ -68,11 +72,9 @@ jobs:
               let allChanges = [];
               let itemsData = [];
               
-              // Procesar cada issue
               for (const issue of issues.data) {
                 console.log(`📌 Procesando issue #${issue.number}...`);
                 
-                // Obtener eventos
                 const events = await github.rest.issues.listEvents({
                   owner: owner,
                   repo: repo,
@@ -80,7 +82,6 @@ jobs:
                   per_page: 100
                 });
                 
-                // Procesar eventos
                 events.data.forEach(event => {
                   allChanges.push({
                     issue_number: issue.number,
@@ -95,7 +96,6 @@ jobs:
                   });
                 });
                 
-                // Guardar información del issue
                 itemsData.push({
                   number: issue.number,
                   title: issue.title,
@@ -107,25 +107,20 @@ jobs:
                 });
               }
               
-              // Ordenar cambios por fecha
               allChanges.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
               
               const timestamp = new Date().toISOString();
               const readableTime = new Date().toLocaleString('es-ES');
               
-              // Generar reporte
               let reportContent = '';
               reportContent += '╔════════════════════════════════════════════════════════════════════╗\n';
               reportContent += '║           HISTORIAL COMPLETO DEL PROYECTO                         ║\n';
               reportContent += '╚════════════════════════════════════════════════════════════════════╝\n\n';
               reportContent += `📅 Fecha del reporte: ${readableTime}\n`;
-              reportContent += `⏰ Timestamp: ${timestamp}\n`;
               reportContent += `🏢 Proyecto: ${project.title}\n`;
               reportContent += `📊 Total de cambios: ${allChanges.length}\n`;
-              reportContent += `📌 Total de issues: ${itemsData.length}\n`;
-              reportContent += `🔗 Repositorio: ${owner}/${repo}\n\n`;
+              reportContent += `📌 Total de issues: ${itemsData.length}\n\n`;
               
-              // SECCIÓN 1: ESTADO ACTUAL DE LOS ISSUES
               reportContent += '═'.repeat(70) + '\n';
               reportContent += '📋 ESTADO ACTUAL DE LOS ISSUES\n';
               reportContent += '═'.repeat(70) + '\n\n';
@@ -140,94 +135,22 @@ jobs:
                 reportContent += `   ├─ Creada: ${createdDate}\n`;
                 reportContent += `   ├─ Actualizada: ${updatedDate}\n`;
                 reportContent += `   ├─ Asignado a: ${item.assignee}\n`;
-                reportContent += `   ├─ Milestone: ${item.milestone}\n`;
-                reportContent += `   ├─ ⏰ Start date: ${createdDate}\n`;
-                reportContent += `   └─ 🎯 Target date: ${item.milestone ? 'Según milestone' : 'Sin asignar'}\n\n`;
+                reportContent += `   └─ Milestone: ${item.milestone}\n\n`;
               });
               
-              // SECCIÓN 2: HISTORIAL DE CAMBIOS
               reportContent += '═'.repeat(70) + '\n';
               reportContent += '🔄 HISTORIAL DE CAMBIOS\n';
               reportContent += '═'.repeat(70) + '\n\n';
               
-              if (allChanges.length === 0) {
-                reportContent += '⚠️ No hay cambios registrados.\n';
-              } else {
-                allChanges.forEach((change, index) => {
-                  let changeDescription = '';
-                  
-                  switch(change.event_type) {
-                    case 'opened':
-                      changeDescription = '✅ Issue ABIERTA';
-                      break;
-                    case 'closed':
-                      changeDescription = '❌ Issue CERRADA';
-                      break;
-                    case 'reopened':
-                      changeDescription = '🔄 Issue REABIERTA';
-                      break;
-                    case 'labeled':
-                      changeDescription = `🏷️  Label AÑADIDO: ${change.label}`;
-                      break;
-                    case 'unlabeled':
-                      changeDescription = `🏷️  Label ELIMINADO: ${change.label}`;
-                      break;
-                    case 'assigned':
-                      changeDescription = `👤 ASIGNADO A: ${change.assignee}`;
-                      break;
-                    case 'unassigned':
-                      changeDescription = `👤 DESASIGNADO`;
-                      break;
-                    case 'milestoned':
-                      changeDescription = `🎯 Milestone ASIGNADO: ${change.milestone}`;
-                      break;
-                    case 'demilestoned':
-                      changeDescription = `🎯 Milestone REMOVIDO`;
-                      break;
-                    case 'commented':
-                      changeDescription = `💬 Comentario AÑADIDO`;
-                      break;
-                    case 'edited':
-                      changeDescription = `✏️  Issue EDITADA`;
-                      break;
-                    default:
-                      changeDescription = `${change.event_type.toUpperCase()}`;
-                  }
-                  
-                  reportContent += `${index + 1}. 📌 Issue #${change.issue_number}: ${change.issue_title}\n`;
-                  reportContent += `   ├─ Cambio: ${changeDescription}\n`;
-                  reportContent += `   ├─ Actor: ${change.actor}\n`;
-                  reportContent += `   └─ Fecha: ${change.readable_date}\n\n`;
-                });
-              }
-              
-              reportContent += '═'.repeat(70) + '\n';
-              reportContent += '✅ Reporte generado exitosamente\n';
-              
-              // Guardar archivos
-              fs.writeFileSync('project-changes.txt', reportContent);
-              console.log('\n💾 Guardado: project-changes.txt');
-              
-              let allReports = [];
-              if (fs.existsSync('project-changes-history.json')) {
-                try {
-                  allReports = JSON.parse(fs.readFileSync('project-changes-history.json', 'utf8'));
-                } catch (e) {
-                  console.log('Creando nuevo historial');
-                }
-              }
-              
-              allReports.push({
-                timestamp: timestamp,
-                readable_time: readableTime,
-                total_changes: allChanges.length,
-                total_items: itemsData.length,
-                items: itemsData,
-                changes: allChanges
+              allChanges.forEach((change, index) => {
+                reportContent += `${index + 1}. 📌 Issue #${change.issue_number}: ${change.issue_title}\n`;
+                reportContent += `   ├─ Evento: ${change.event_type}\n`;
+                reportContent += `   ├─ Actor: ${change.actor}\n`;
+                reportContent += `   └─ Fecha: ${change.readable_date}\n\n`;
               });
               
-              fs.writeFileSync('project-changes-history.json', JSON.stringify(allReports, null, 2));
-              console.log('💾 Guardado: project-changes-history.json');
+              fs.writeFileSync('project-changes.txt', reportContent);
+              console.log('💾 Guardado: project-changes.txt');
               
             } catch (error) {
               console.error('❌ Error:', error.message);
