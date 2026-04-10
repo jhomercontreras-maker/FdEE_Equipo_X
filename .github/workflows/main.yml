@@ -1,0 +1,99 @@
+name: Monitor Project Date Changes
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Cada hora
+  workflow_dispatch:  # Permite ejecutar manualmente
+
+jobs:
+  monitor-dates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Monitor Project Dates
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            
+            // Obtener información del proyecto
+            const projectNumber = 2;
+            const owner = 'jhomercontreras-maker';
+            const repo = 'FdEE_Equipo_X';
+            
+            const query = `
+              query {
+                repository(owner: "${owner}", name: "${repo}") {
+                  projectV2(number: ${projectNumber}) {
+                    items(first: 100) {
+                      nodes {
+                        id
+                        content {
+                          ... on Issue {
+                            number
+                            title
+                            updatedAt
+                            url
+                          }
+                        }
+                        fieldValues(first: 20) {
+                          nodes {
+                            ... on ProjectV2ItemFieldDateValue {
+                              field {
+                                name
+                              }
+                              date
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+            
+            try {
+              const result = await github.graphql(query);
+              const items = result.repository.projectV2.items.nodes;
+              
+              console.log('📊 Reporte de Fechas del Proyecto:');
+              console.log('='.repeat(50));
+              
+              items.forEach(item => {
+                if (item.content) {
+                  console.log(`\n📌 Issue #${item.content.number}: ${item.content.title}`);
+                  console.log(`   URL: ${item.content.url}`);
+                  console.log(`   Última actualización: ${item.content.updatedAt}`);
+                  
+                  item.fieldValues.nodes.forEach(field => {
+                    if (field.field && field.date) {
+                      console.log(`   📅 ${field.field.name}: ${field.date}`);
+                    }
+                  });
+                }
+              });
+              
+              // Guardar resultados en archivo
+              const report = {
+                timestamp: new Date().toISOString(),
+                items: items.map(item => ({
+                  number: item.content?.number,
+                  title: item.content?.title,
+                  url: item.content?.url,
+                  dates: item.fieldValues.nodes
+                    .filter(f => f.field && f.date)
+                    .map(f => ({ field: f.field.name, date: f.date }))
+                }))
+              };
+              
+              console.log('\n✅ Reporte completado');
+              console.log(JSON.stringify(report, null, 2));
+              
+            } catch (error) {
+              console.error('❌ Error:', error);
+              throw error;
+            }
