@@ -1,0 +1,114 @@
+name: Monitor Project Date Changes
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Cada hora
+  workflow_dispatch:
+
+jobs:
+  monitor-dates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Monitor Project Dates
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const owner = 'jhomercontreras-maker';
+            const repo = 'FdEE_Equipo_X';
+            
+            // Archivo donde guardamos el historial
+            const historyFile = 'project-dates-history.json';
+            
+            try {
+              // Obtener issues actuales
+              const issues = await github.rest.issues.listForRepo({
+                owner: owner,
+                repo: repo,
+                state: 'all',
+                per_page: 100
+              });
+              
+              // Cargar historial anterior
+              let previousData = {};
+              try {
+                previousData = JSON.parse(fs.readFileSync(historyFile, 'utf8'));
+              } catch (e) {
+                console.log('📝 Primera ejecución - creando historial inicial');
+              }
+              
+              console.log('📊 MONITOREO DE CAMBIOS DE FECHAS');
+              console.log('='.repeat(70));
+              console.log(`Fecha de consulta: ${new Date().toISOString()}`);
+              console.log('='.repeat(70));
+              
+              let hasChanges = false;
+              const currentData = {};
+              const changes = [];
+              
+              issues.data.forEach((issue) => {
+                const issueKey = `issue-${issue.number}`;
+                const currentDate = issue.updated_at;
+                
+                currentData[issueKey] = {
+                  number: issue.number,
+                  title: issue.title,
+                  updated_at: currentDate,
+                  created_at: issue.created_at,
+                  state: issue.state,
+                  url: issue.html_url
+                };
+                
+                // Verificar si hubo cambio
+                if (previousData[issueKey]) {
+                  if (previousData[issueKey].updated_at !== currentDate) {
+                    hasChanges = true;
+                    changes.push({
+                      number: issue.number,
+                      title: issue.title,
+                      previousUpdate: previousData[issueKey].updated_at,
+                      currentUpdate: currentDate,
+                      url: issue.html_url
+                    });
+                  }
+                }
+              });
+              
+              // Mostrar cambios detectados
+              if (hasChanges) {
+                console.log('\n✅ SE DETECTARON CAMBIOS:\n');
+                changes.forEach((change, index) => {
+                  console.log(`${index + 1}. 📌 Issue #${change.number}: ${change.title}`);
+                  console.log(`   Anterior: ${new Date(change.previousUpdate).toLocaleString()}`);
+                  console.log(`   Actual:   ${new Date(change.currentUpdate).toLocaleString()}`);
+                  console.log(`   🔗 ${change.url}\n`);
+                });
+              } else {
+                console.log('\nℹ️  No se detectaron cambios en las fechas\n');
+              }
+              
+              // Mostrar todas las fechas (sin importar si cambiaron)
+              console.log('='.repeat(70));
+              console.log('📅 TODAS LAS FECHAS DE ACTUALIZACION:\n');
+              
+              issues.data.forEach((issue, index) => {
+                console.log(`${index + 1}. #${issue.number}: ${issue.title}`);
+                console.log(`   Creada:    ${new Date(issue.created_at).toLocaleString()}`);
+                console.log(`   Actualizada: ${new Date(issue.updated_at).toLocaleString()}`);
+                console.log(`   Estado:    ${issue.state}`);
+                console.log('');
+              });
+              
+              // Guardar datos actuales para próxima comparación
+              fs.writeFileSync(historyFile, JSON.stringify(currentData, null, 2));
+              console.log('='.repeat(70));
+              console.log('✅ Historial actualizado');
+              
+            } catch (error) {
+              console.error('❌ Error:', error.message);
+              throw error;
+            }
