@@ -2,10 +2,10 @@
 ║           HISTORIAL COMPLETO DEL PROYECTO                         ║
 ╚════════════════════════════════════════════════════════════════════╝
 
-📅 Fecha: 11/4/2026, 13:53:13
+📅 Fecha: 11/4/2026, 14:33:26
 🏢 Proyecto: Sistema de audio amplificador
 📊 Items: 58
-🔄 Cambios: 139
+🔄 Cambios: 50
 
 ══════════════════════════════════════════════════════════════════════
 📋 ESTADO ACTUAL DEL PROJECT
@@ -77,283 +77,283 @@
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-12. 📌 ISSUE #12
+12. 📌 ISSUE #2
    ├─ Título: 1 Gestión de Proyectos
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-13. 📌 ISSUE #13
+13. 📌 ISSUE #3
    ├─ Título: 1.1  Metodología
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-14. 📌 ISSUE #14
+14. 📌 ISSUE #4
    ├─ Título: 1.1.1  Antecedentes
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-15. 📌 ISSUE #15
+15. 📌 ISSUE #5
    ├─ Título: 1.1.2  Problemática
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-16. 📌 ISSUE #16
+16. 📌 ISSUE #6
    ├─ Título: 1.1.3  Objetivos
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-17. 📌 ISSUE #17
+17. 📌 ISSUE #7
    ├─ Título: 1.1.4  Estado del arte
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-18. 📌 ISSUE #18
+18. 📌 ISSUE #8
    ├─ Título: 1.1.5  Lista de exigencias
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-19. 📌 ISSUE #19
+19. 📌 ISSUE #9
    ├─ Título: 1.1.6  Caja Negra
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-20. 📌 ISSUE #20
+20. 📌 ISSUE #10
    ├─ Título: 1.1.7 Estructura de funciones
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-21. 📌 ISSUE #21
+21. 📌 ISSUE #11
    ├─ Título: 1.1.8  Matriz morfológica
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-22. 📌 ISSUE #22
+22. 📌 ISSUE #12
    ├─ Título: 1.2  Planificación
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-23. 📌 ISSUE #23
+23. 📌 ISSUE #13
    ├─ Título: 1.2.1  EDT
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-24. 📌 ISSUE #24
+24. 📌 ISSUE #14
    ├─ Título: 1.2.2  Diagrama de Gantt
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-25. 📌 ISSUE #25
+25. 📌 ISSUE #15
    ├─ Título: 1.2.3  Presupuesto
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-26. 📌 ISSUE #26
+26. 📌 ISSUE #16
    ├─ Título: 1.3  Documentación
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-27. 📌 ISSUE #27
+27. 📌 ISSUE #17
    ├─ Título: 1.3.1  Informes de avance
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-28. 📌 ISSUE #28
+28. 📌 ISSUE #18
    ├─ Título: 1.3.1.1  Primer avance del informe
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-29. 📌 ISSUE #29
+29. 📌 ISSUE #19
    ├─ Título: 1.3.1.2  Segundo avance del informe
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-30. 📌 ISSUE #30
+30. 📌 ISSUE #20
    ├─ Título: 1.3.1.3  Tercer avance del informe
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-31. 📌 ISSUE #31
+31. 📌 ISSUE #21
    ├─ Título: 1.3.1.4  Cuarto avance del informe
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-32. 📌 ISSUE #32
+32. 📌 ISSUE #22
    ├─ Título: 1.3.1.5  Quinto avance del informe
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-33. 📌 ISSUE #33
+33. 📌 ISSUE #23
    ├─ Título: 1.3.2  Bitácora de desarrollo
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-34. 📌 ISSUE #34
+34. 📌 ISSUE #24
    ├─ Título: 2 Electrónica
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-35. 📌 ISSUE #35
+35. 📌 ISSUE #25
    ├─ Título: 2.1  Selección de componentes electrónicos
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-36. 📌 ISSUE #36
+36. 📌 ISSUE #26
    ├─ Título: 2.2  Implementación electrónica
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-37. 📌 ISSUE #37
+37. 📌 ISSUE #27
    ├─ Título: 2.2.1  Amplificador de audio
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-38. 📌 ISSUE #38
+38. 📌 ISSUE #28
    ├─ Título: 2.2.2  Sistema de distorsion
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-39. 📌 ISSUE #39
+39. 📌 ISSUE #29
    ├─ Título: 2.2.3  Selector de entradas de audio
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-40. 📌 ISSUE #40
+40. 📌 ISSUE #30
    ├─ Título: 2.3  Fuente de alimentación
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-41. 📌 ISSUE #41
+41. 📌 ISSUE #31
    ├─ Título: 2.3.1  Selección de fuente
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-42. 📌 ISSUE #42
+42. 📌 ISSUE #32
    ├─ Título: 2.3.3  Seleccion de protecciones
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-43. 📌 ISSUE #43
+43. 📌 ISSUE #33
    ├─ Título: 2.4  Diseño de PCB
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-44. 📌 ISSUE #44
+44. 📌 ISSUE #34
    ├─ Título: 2.4.1  Esquemático
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-45. 📌 ISSUE #45
+45. 📌 ISSUE #35
    ├─ Título: 2.4.2  Layout
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-46. 📌 ISSUE #46
+46. 📌 ISSUE #36
    ├─ Título: 2.5  Ensamblaje electrónico
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-47. 📌 ISSUE #47
+47. 📌 ISSUE #37
    ├─ Título: 2.5.1  Fabricación de la PCB
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-48. 📌 ISSUE #48
+48. 📌 ISSUE #38
    ├─ Título: 2.5.2  Soldadura de componentes
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-49. 📌 ISSUE #49
+49. 📌 ISSUE #39
    ├─ Título: 2.5.3  Montaje de módulos y conexiones
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-50. 📌 ISSUE #50
+50. 📌 ISSUE #40
    ├─ Título: 3 Mecánica
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-51. 📌 ISSUE #51
+51. 📌 ISSUE #41
    ├─ Título: 3.1  Diseño del chasis
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-52. 📌 ISSUE #52
+52. 📌 ISSUE #42
    ├─ Título: 3.2  Selección de materiales y métodos de fabricación
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-53. 📌 ISSUE #53
+53. 📌 ISSUE #43
    ├─ Título: 3.3  Ensamblaje mecánico
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-54. 📌 ISSUE #54
+54. 📌 ISSUE #44
    ├─ Título: 4 Comprobación funcional del sistema
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-55. 📌 ISSUE #55
+55. 📌 ISSUE #45
    ├─ Título: 4.1  Pruebas de alimentación
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-56. 📌 ISSUE #56
+56. 📌 ISSUE #46
    ├─ Título: 4.2  Pruebas de audio
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-57. 📌 ISSUE #57
+57. 📌 ISSUE #47
    ├─ Título: 4.3  Pruebas de eficiencia energética
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
    └─ ⏰ Start date: Sin fecha
 
-58. 📌 ISSUE #58
+58. 📌 ISSUE #48
    ├─ Título: 4.4  Pruebas de conectividad total
    ├─ Estado GitHub: OPEN
    ├─ 📌 Status: Backlog
@@ -363,697 +363,252 @@
 🔄 HISTORIAL DE CAMBIOS
 ══════════════════════════════════════════════════════════════════════
 
-1. 📌 Issue #13
-   ├─ Evento: unassigned
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 17:09:43
-
-2. 📌 Issue #13
-   ├─ Evento: assigned
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 17:09:29
-
-3. 📌 Issue #58
-   ├─ Evento: renamed
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:57:57
-
-4. 📌 Issue #58
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:57:37
-
-5. 📌 Issue #54
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:57:37
-
-6. 📌 Issue #57
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:57:30
-
-7. 📌 Issue #54
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:57:30
-
-8. 📌 Issue #56
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:57:23
-
-9. 📌 Issue #54
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:57:23
-
-10. 📌 Issue #55
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:57:13
-
-11. 📌 Issue #54
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:57:13
-
-12. 📌 Issue #53
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:56
-
-13. 📌 Issue #50
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:56
-
-14. 📌 Issue #52
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:49
-
-15. 📌 Issue #50
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:49
-
-16. 📌 Issue #51
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:42
-
-17. 📌 Issue #50
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:42
-
-18. 📌 Issue #49
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:21
-
-19. 📌 Issue #46
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:21
-
-20. 📌 Issue #48
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:13
-
-21. 📌 Issue #46
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:13
-
-22. 📌 Issue #47
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:01
-
-23. 📌 Issue #46
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:56:01
-
-24. 📌 Issue #46
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:51
-
-25. 📌 Issue #34
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:51
-
-26. 📌 Issue #45
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:40
-
-27. 📌 Issue #43
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:40
-
-28. 📌 Issue #44
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:33
-
-29. 📌 Issue #43
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:33
-
-30. 📌 Issue #43
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:23
-
-31. 📌 Issue #34
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:23
-
-32. 📌 Issue #42
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:15
-
-33. 📌 Issue #40
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:55:15
-
-34. 📌 Issue #41
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:54:58
-
-35. 📌 Issue #40
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:54:58
-
-36. 📌 Issue #40
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:54:32
-
-37. 📌 Issue #34
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:54:32
-
-38. 📌 Issue #39
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:54:22
-
-39. 📌 Issue #36
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:54:22
-
-40. 📌 Issue #38
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:54:13
-
-41. 📌 Issue #36
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:54:13
-
-42. 📌 Issue #37
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:53:53
-
-43. 📌 Issue #36
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:53:53
-
-44. 📌 Issue #36
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:53:34
-
-45. 📌 Issue #34
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:53:34
-
-46. 📌 Issue #35
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:53:24
-
-47. 📌 Issue #34
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:53:24
-
-48. 📌 Issue #26
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:52:57
-
-49. 📌 Issue #12
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:52:57
-
-50. 📌 Issue #22
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:52:51
-
-51. 📌 Issue #12
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:52:51
-
-52. 📌 Issue #33
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:58
-
-53. 📌 Issue #26
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:58
-
-54. 📌 Issue #32
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:41
-
-55. 📌 Issue #27
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:41
-
-56. 📌 Issue #31
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:32
-
-57. 📌 Issue #27
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:32
-
-58. 📌 Issue #30
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:22
-
-59. 📌 Issue #27
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:22
-
-60. 📌 Issue #29
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:11
-
-61. 📌 Issue #27
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:11
-
-62. 📌 Issue #28
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:03
-
-63. 📌 Issue #27
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:51:03
-
-64. 📌 Issue #27
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:50:46
-
-65. 📌 Issue #26
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:50:46
-
-66. 📌 Issue #25
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:50:23
-
-67. 📌 Issue #22
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:50:23
-
-68. 📌 Issue #24
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:50:14
-
-69. 📌 Issue #22
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:50:14
-
-70. 📌 Issue #23
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:50:02
-
-71. 📌 Issue #22
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:50:02
-
-72. 📌 Issue #21
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:49:31
-
-73. 📌 Issue #13
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:49:31
-
-74. 📌 Issue #20
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:49:22
-
-75. 📌 Issue #13
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:49:22
-
-76. 📌 Issue #19
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:49:11
-
-77. 📌 Issue #13
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:49:11
-
-78. 📌 Issue #18
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:49:02
-
-79. 📌 Issue #13
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:49:02
-
-80. 📌 Issue #17
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:48:53
-
-81. 📌 Issue #13
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:48:53
-
-82. 📌 Issue #16
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:48:40
-
-83. 📌 Issue #13
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:48:40
-
-84. 📌 Issue #15
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:48:31
-
-85. 📌 Issue #13
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:48:31
-
-86. 📌 Issue #14
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:48:18
-
-87. 📌 Issue #13
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:48:18
-
-88. 📌 Issue #13
-   ├─ Evento: parent_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:47:47
-
-89. 📌 Issue #12
-   ├─ Evento: sub_issue_added
-   ├─ Actor: jhomercontreras-maker
-   └─ Fecha: 10/4/2026, 16:47:47
-
-90. 📌 Issue #11
+1. 📌 Issue #11
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 21:15:19
 
-91. 📌 Issue #4
+2. 📌 Issue #4
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 21:15:19
 
-92. 📌 Issue #11
+3. 📌 Issue #11
    ├─ Evento: assigned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 21:15:17
 
-93. 📌 Issue #9
+4. 📌 Issue #9
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:40:30
 
-94. 📌 Issue #6
+5. 📌 Issue #6
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:40:30
 
-95. 📌 Issue #8
+6. 📌 Issue #8
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:42
 
-96. 📌 Issue #6
+7. 📌 Issue #6
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:42
 
-97. 📌 Issue #8
+8. 📌 Issue #8
    ├─ Evento: parent_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:41
 
-98. 📌 Issue #7
+9. 📌 Issue #7
    ├─ Evento: sub_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:41
 
-99. 📌 Issue #8
+10. 📌 Issue #8
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:13
 
-100. 📌 Issue #7
+11. 📌 Issue #7
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:39:13
 
-101. 📌 Issue #7
+12. 📌 Issue #7
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:38:51
 
-102. 📌 Issue #6
+13. 📌 Issue #6
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:38:51
 
-103. 📌 Issue #6
+14. 📌 Issue #6
    ├─ Evento: renamed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:38:33
 
-104. 📌 Issue #2
+15. 📌 Issue #2
    ├─ Evento: renamed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:37:40
 
-105. 📌 Issue #3
+16. 📌 Issue #3
    ├─ Evento: renamed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:37:19
 
-106. 📌 Issue #1
+17. 📌 Issue #1
    ├─ Evento: renamed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:36:53
 
-107. 📌 Issue #3
+18. 📌 Issue #3
    ├─ Evento: blocked_by_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:31:33
 
-108. 📌 Issue #2
+19. 📌 Issue #2
    ├─ Evento: blocking_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:31:33
 
-109. 📌 Issue #2
+20. 📌 Issue #2
    ├─ Evento: parent_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:31:24
 
-110. 📌 Issue #1
+21. 📌 Issue #1
    ├─ Evento: sub_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:31:24
 
-111. 📌 Issue #3
+22. 📌 Issue #3
    ├─ Evento: reopened
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:30:55
 
-112. 📌 Issue #2
+23. 📌 Issue #2
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:30:27
 
-113. 📌 Issue #1
+24. 📌 Issue #1
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:30:27
 
-114. 📌 Issue #3
+25. 📌 Issue #3
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:30:04
 
-115. 📌 Issue #3
+26. 📌 Issue #3
    ├─ Evento: parent_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:38
 
-116. 📌 Issue #1
+27. 📌 Issue #1
    ├─ Evento: sub_issue_removed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:38
 
-117. 📌 Issue #3
+28. 📌 Issue #3
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:35
 
-118. 📌 Issue #1
+29. 📌 Issue #1
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:35
 
-119. 📌 Issue #3
+30. 📌 Issue #3
    ├─ Evento: blocked_by_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:18
 
-120. 📌 Issue #2
+31. 📌 Issue #2
    ├─ Evento: blocking_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:29:18
 
-121. 📌 Issue #5
+32. 📌 Issue #5
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:17:50
 
-122. 📌 Issue #4
+33. 📌 Issue #4
    ├─ Evento: reopened
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:17:26
 
-123. 📌 Issue #4
+34. 📌 Issue #4
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:17:24
 
-124. 📌 Issue #2
+35. 📌 Issue #2
    ├─ Evento: reopened
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:10:37
 
-125. 📌 Issue #1
+36. 📌 Issue #1
    ├─ Evento: reopened
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:09:08
 
-126. 📌 Issue #5
+37. 📌 Issue #5
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:09:04
 
-127. 📌 Issue #1
+38. 📌 Issue #1
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:09:04
 
-128. 📌 Issue #5
+39. 📌 Issue #5
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:09:02
 
-129. 📌 Issue #4
+40. 📌 Issue #4
    ├─ Evento: parent_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:08:48
 
-130. 📌 Issue #1
+41. 📌 Issue #1
    ├─ Evento: sub_issue_added
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:08:48
 
-131. 📌 Issue #4
+42. 📌 Issue #4
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 9/4/2026, 20:08:47
 
-132. 📌 Issue #2
+43. 📌 Issue #2
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:28:19
 
-133. 📌 Issue #1
+44. 📌 Issue #1
    ├─ Evento: closed
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:28:11
 
-134. 📌 Issue #3
+45. 📌 Issue #3
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:18:29
 
-135. 📌 Issue #3
+46. 📌 Issue #3
    ├─ Evento: assigned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:18:29
 
-136. 📌 Issue #2
+47. 📌 Issue #2
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:18:12
 
-137. 📌 Issue #2
+48. 📌 Issue #2
    ├─ Evento: assigned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:18:12
 
-138. 📌 Issue #1
+49. 📌 Issue #1
    ├─ Evento: milestoned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:17:54
 
-139. 📌 Issue #1
+50. 📌 Issue #1
    ├─ Evento: assigned
    ├─ Actor: jhomercontreras-maker
    └─ Fecha: 31/3/2026, 21:17:54
